@@ -112,6 +112,11 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                 MODE_PRIVATE, null);
         Cursor objCursor = objSqLiteDatabase.rawQuery("SELECT * FROM " + ManageTABLE.TABLE_ORDER, null);  // เลือกOrder ทั้งหมด
         objCursor.moveToFirst();  // ให้เลือกตำแหน่ง ของข้อมูล Order อยู่บนสุด
+
+        //**********************************************************************************************************************
+        // Update Stock
+        //**********************************************************************************************************************
+
         for (int i =0; i<objCursor.getCount();i++) {    // นำOrder มานับแถว ถ้ามีข้อมูล ให้ทำ
 
             String strDate = objCursor.getString(objCursor.getColumnIndex(ManageTABLE.COLUMN_Date));  // รับค่า เวลา
@@ -128,6 +133,13 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                     .Builder().permitAll().build();
             StrictMode.setThreadPolicy(myPolicy);   // อนุญาตืให้ myPolicy เชื่อมต่อ โปรโตคอล ได้
 
+            //Update breadTABLE
+            updateBreadStock(strBread, strItem);
+
+
+
+
+            // Update orderTABLE_mos
             try {
 
                 ArrayList<NameValuePair> objNameValuePairs = new ArrayList<NameValuePair>();
@@ -194,6 +206,25 @@ public class ConfirmOrderActivity extends AppCompatActivity {
 
 
     }   // clickFinish
+
+    private void updateBreadStock(String strBread, String strItem) {
+
+        // หา ID ของ Bread
+        try {
+
+            ManageTABLE objmanageTABLE = new ManageTABLE(this);
+            String[] resultBread = objmanageTABLE.searchBreadStock(strBread);
+
+            Log.d("19Feb", "ID bread ==> " + resultBread[0]);
+
+
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }
+
+    }   // updateBreadStock
 
 
     public void clickMore(View view) {
