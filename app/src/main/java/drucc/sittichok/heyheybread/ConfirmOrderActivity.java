@@ -35,8 +35,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
     private ListView orderListView;
     private int totalAnInt = 0;
     private String strCurrentIDReceive;
-    private Button moreButton, finishButton;
-    private boolean visibleStatus = false;
+
 
 
     @Override
@@ -47,8 +46,6 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         // Bind Widget  กำหนตตำแหน่งในรายการสั่งซื้อ
         bindWidget();
 
-        //Check Visible Button
-        checkVisible();
 
         // Read All Data  นำค่าที่ลูกค้าสั่งมาแสดง และ ส่งค่า ชื่อ นามสกุล ที่ อยู่ เบอร์ โทร ของ ลูกค้า และรายการที่สั่ง
         readAllData();
@@ -61,23 +58,6 @@ public class ConfirmOrderActivity extends AppCompatActivity {
 
     }   // Main Method
 
-    private void checkVisible() {
-
-        try {
-
-            boolean myStatus = getIntent().getBooleanExtra("Status", false);
-
-            if (myStatus) {
-
-                moreButton.setVisibility(View.INVISIBLE);
-                finishButton.setVisibility(View.INVISIBLE);
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace(); // ปริ้นบน ลอคแคท
-        }
-
-    }   // checkVisible
 
     private void findIDreceive() {
 
@@ -349,8 +329,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         totalTextView = (TextView) findViewById(R.id.textView23); // ตำแหน่งราคารวม
         orderListView = (ListView) findViewById(R.id.listView2); // ตำแหน่งรายการสินค้าที่ลูกค้าสั่งซื้อ
         idReceiveTextView = (TextView) findViewById(R.id.textView30); // ตำแหน่ง รหัสรายการสั่งซื้อ
-        moreButton = (Button) findViewById(R.id.button6);
-        finishButton = (Button) findViewById(R.id.button7);
+
 
     }   //bindWidget
 
