@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">WeyHeyBread</string>
+    <string name="a1">กรุณากรอกไอดี</string>
+    <string name="a2">กรุณากรอกรหัสผ่าน</string>
+    <string name="a3">กรุณากรอกชื่อ</string>
+    <string name="a4">กรุณากรอกนามสกุล</string>
+    <string name="a5">กรุณากรอกที่อยู่</string>
+    <string name="a6">กรุณากรอกเบอร์โทร"</string>
+    <string name="tell">Phone. 084-434-5155"</string>
+    <string name="receive">OrderList</string>
+    <string name="receive1">GrandTotal</string>
+    <string name="b1">No</string>
+    <string name="b2">BreadName</string>
+    <string name="b3">Amount</string>
+    <string name="b4">Price</string>
+    <string name="b5">Total</string>
+</resources>
