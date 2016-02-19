@@ -129,7 +129,7 @@
                 android:layout_width="@dimen/icon"
                 android:layout_height="@dimen/icon"
                 android:id="@+id/imageView6"
-                android:src="@drawable/pamung"
+                android:src="@drawable/generate"
                 android:layout_weight="1" />
 
         </LinearLayout>
@@ -142,7 +142,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Complacency"
+                android:text="Order History"
                 android:id="@+id/textView11"
                 android:textSize="@dimen/h2"
                 android:layout_weight="1"
