@@ -184,6 +184,9 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                                 // ทำเสร็จแล้ว ให้ กลับไปหน้า HubActivity.class
         String strID = getIntent().getStringExtra("idUser");
         objIntent.putExtra("ID", strID); //แล้วส่งค่า ID คืนไปที่หน้า HubActivity.class ด้วย
+
+        Log.d("19Feb", "ID ที่ได้ ==> " + strID);
+
         startActivity(objIntent);
 
         //Delete OrderTABLE
